@@ -8,7 +8,9 @@
   <button v-on:click="getData()">Submit</button>
   <br />
   <br />
-  
+  <div>
+    <p v-for="user in list" v-bind:key="user" ref="user"> UserName: {{user.username}} <br> Email: {{user.email}}</p> 
+  </div>
 </template>
 
 <script>
