@@ -1,17 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <input type="text" id="username" name="username" v-model="username" placeholder="Username" />
+  <br />
+  <br />
+  <input type="email" id="email" name="email" v-model="email" placeholder="Email"/>
+  <br />
+  <br />
+  <button v-on:click="getData()">Submit</button>
+  <br />
+  <br />
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  data() {
+    return {
+      list: [],
+      username: '',
+      email: ''
+    };
+  },
+
+  methods: {
+    getData: function () {
+      this.list.push({
+        username :this.username ,
+        email : this.email
+
+      })
+    },
+  },
+};
 </script>
 
 <style>
